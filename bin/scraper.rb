@@ -2,13 +2,13 @@ require 'HTTParty'
 require 'Nokogiri'
 
 class Scraper
-  attr_accessor :parse_page, :doc, :arr
+  attr_accessor :arr
   attr_reader :list
 
-  def initialize
-    @doc = HTTParty.get('https://www3.animeflv.net/browse')
-    @parse_page = Nokogiri::HTML(@doc)
-    @list = @parse_page.css('.ListAnimes').css('.Anime')
+  def initialize(url)
+    @unparsed_page = HTTParty.get(url)
+    @parsed_page = Nokogiri::HTML(@unparsed_page)
+    @list = @parsed_page.css('.ListAnimes').css('.Anime')
     @arr = []
     @list.each do |anime|
       hash = {
@@ -28,6 +28,6 @@ class Scraper
   end
 end
 
-scraper = Scraper.new
+scraper = Scraper.new('https://www3.animeflv.net/browse')
 
 scraper.print_data
