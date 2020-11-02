@@ -11,15 +11,26 @@ class Scraper
     @list = @parse_page.css('.ListAnimes').css('.Anime')
     @arr = []
     @list.each do |anime|
-      title = anime.css('h3').text
-      @arr.push(title)
-    end
+      hash = {
+        title: anime.css('h3').text,
+        type: anime.css('.Description').css('.Type').text,
+        url: "https://www3.animeflv.net/#{anime.css('.Button')[0]['href']}"
+      }
+      @arr.push(hash)
+      end
+    puts @list[0]
+    puts @list[0].css('.Button')[0]['href'].class
   end
-  def print_title
-    @arr.each { |title| puts title }
+  def print_data
+    @arr.each do |anime|
+      puts "Anime Name : #{anime[:title]}"
+      puts "Type : #{anime[:type]}"
+      puts "Anime URL : #{anime[:url]}"
+      puts
+    end
   end
 end
 
 scraper = Scraper.new
 
-scraper.print_title
+scraper.print_data
