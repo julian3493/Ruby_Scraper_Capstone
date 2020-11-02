@@ -15,7 +15,8 @@ class Scraper
     @arr = []
     @list.each do |anime|
       hash = {
-        title: anime.css('h3').text, type: anime.css('.Description').css('.Type').text,
+        title: anime.css('h3').text,
+        type: anime.css('.Description').css('.Type').text,
         url: "https://www3.animeflv.net/#{anime.css('.Button')[0]['href']}"
       }
       @arr.push(hash)
@@ -29,5 +30,14 @@ class Scraper
       puts "Anime URL : #{anime[:url]}"
       puts
     end
+  end
+
+  def more_info(url)
+    upd_page = HTTParty.get(url)
+    pd_page = Nokogiri::HTML(@unparsed_page)
+    @detail = {
+      title: pd_page.css('h1')
+    }
+    puts @detail
   end
 end
