@@ -2,28 +2,24 @@ require 'HTTParty'
 require 'Nokogiri'
 
 class Scraper
-  attr_accessor :parse_page, :doc
+  attr_accessor :parse_page, :doc, :arr
+  attr_reader :list
 
   def initialize
-    @doc = HTTParty.get('https://store.nike.com/us/en_us/pw/mens-nikeid-lifestyle-shoes/1k9Z7puZoneZoi3')
+    @doc = HTTParty.get('https://www3.animeflv.net/browse')
     @parse_page = Nokogiri::HTML(@doc)
+    @list = @parse_page.css('.ListAnimes').css('.Anime')
+    @arr = []
+    @list.each do |anime|
+      title = anime.css('h3').text
+      @arr.push(title)
+    end
   end
-
-  def names
-    @parse_page.css('.grid-item-info').css('.product-name').css('p').children.map { |name| name.text }.compact
+  def print_title
+    @arr.each { |title| puts title }
   end
-
-  def prices
-    @parse_page.css('.grid-item-info').css('.grid-item-info').css('.product-name').css('span.local').children.map { |price| price.text }.compact
-  end
-
 end
 
 scraper = Scraper.new
-names = scraper.names
-prices = scraper.prices
 
-(0...prices.size).each do |index|
-  puts "- - - index #{index + 1} - - -"
-  puts "Name: #{names[index]} | Price: #{prices[index]}"
-end
+scraper.print_title
