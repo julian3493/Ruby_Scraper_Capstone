@@ -12,15 +12,12 @@ class Scraper
     @arr = []
     @list.each do |anime|
       hash = {
-        title: anime.css('h3').text,
-        type: anime.css('.Description').css('.Type').text,
-        url: "https://www3.animeflv.net/#{anime.css('.Button')[0]['href']}"
-      }
+        title: anime.css('h3').text, type: anime.css('.Description').css('.Type').text,
+        url: "https://www3.animeflv.net/#{anime.css('.Button')[0]['href']}"}
       @arr.push(hash)
-      end
-    puts @list[0]
-    puts @list[0].css('.Button')[0]['href'].class
+    end
   end
+
   def print_data
     @arr.each do |anime|
       puts "Anime Name : #{anime[:title]}"
