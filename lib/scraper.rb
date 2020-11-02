@@ -31,7 +31,3 @@ class Scraper
     end
   end
 end
-
-scraper = Scraper.new('https://www3.animeflv.net/browse')
-scraper.format_data
-scraper.print_data
