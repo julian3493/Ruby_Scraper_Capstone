@@ -1,6 +1,6 @@
 # Ruby Scraper Capstone
 
- In this project, I create a scraper script that obtains a list of anime from `https://www3.animeflv.net/browse` and shows the data in the terminal. It ask if you want more information about one of the anime listed and shows that information if you want.
+ In this project, I created a scraper script that obtains a list of anime from `https://www3.animeflv.net/browse` and shows the data in the terminal. It asks if you want more information about one of the anime listed and shows that information if you want.
  I choose that page because it could be useful for me and some of my friends.
 
 ## Built With
@@ -26,9 +26,9 @@ Gems:
 
 - Install bundler. Type `$ gem install bundler`
 
-- Install the neccesary gems to run the scraper. Type `$ bundle install`
+- Install the necessary gems to run the scraper. Type `$ bundle install`
 
-- Now your enviroment is ready to run the scraper. Type `$ ruby bin/main.rb`
+- Now your environment is ready to run the scraper. Type `$ ruby bin/main.rb`
 
 ### Using the scraper
 
@@ -40,9 +40,9 @@ Gems:
 
 - At the end of the list you will see a message asking if you want more information about one anime. If you want to see more information you need need to write 'y' and press enter. You can also press any other key if you want to finish the script.
 
-- If you choose see more information about, you need to write the title of the anime which you want more information. You must write the title exactly how it apears in the list.
+- If you choose to see more information about, you need to write the title of the anime in which you want more information. You must write the title exactly how it appears in the list.
 
-- When you write the name, you will see the Anime Title, Description, and Status. After that you will see a goodbye message and the script finish.
+- When you write the name, you will see the Anime Title, Description, and Status. After that, you will see a goodbye message and the script finish.
 
 ### Run tests
 

@@ -3,6 +3,7 @@ require 'nokogiri'
 
 # Class MoreInfo
 class MoreInfo
+  attr_reader :detail
   def initialize(url)
     upd_page = HTTParty.get(url)
     pd_page = Nokogiri::HTML(upd_page)
