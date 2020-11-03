@@ -3,9 +3,6 @@
 require_relative '../lib/scraper.rb'
 require_relative '../lib/more_info.rb'
 
-require 'HTTParty'
-require 'Nokogiri'
-
 scraper = Scraper.new('https://www3.animeflv.net/browse')
 
 puts 'Welcome to the animeflv scraper'
