@@ -65,3 +65,7 @@ Feel free to check the [issues page](https://github.com/julian3493/Ruby_Scraper_
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- The Odin Project
