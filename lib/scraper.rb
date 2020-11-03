@@ -31,15 +31,6 @@ class Scraper
 
   public
 
-  def print_data
-    @arr.each do |anime|
-      puts "Anime Name : #{anime[:title]}"
-      puts "Type : #{anime[:type]}"
-      puts "Anime URL : #{anime[:url]}"
-      puts
-    end
-  end
-
   def check_title(string)
     @arr.any? { |hash| @more_url = hash[:url] if hash[:title] == string }
   end

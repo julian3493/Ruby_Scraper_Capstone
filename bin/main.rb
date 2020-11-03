@@ -3,6 +3,15 @@
 require_relative '../lib/scraper.rb'
 require_relative '../lib/more_info.rb'
 
+def print_data(arr)
+  arr.each do |anime|
+    puts "Anime Name : #{anime[:title]}"
+    puts "Type : #{anime[:type]}"
+    puts "Anime URL : #{anime[:url]}"
+    puts
+  end
+end
+
 scraper = Scraper.new('https://www3.animeflv.net/browse')
 
 puts 'Welcome to the animeflv scraper'
@@ -11,7 +20,7 @@ puts "PRESS 'y' to see the registers or any other key to exit"
 see = gets.chomp
 
 if see == 'y'
-  scraper.print_data
+  print_data(scraper.arr)
   puts 'Do you want to see more information about an anime?'
   puts "PRESS 'y' to see more information or any other key to exit"
   more_info = gets.chomp
