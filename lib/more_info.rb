@@ -14,4 +14,10 @@ class MoreInfo
     system 'cls'
   end
 
+  def print_info
+    puts "Anime Title : #{@detail[:title]}"
+    puts "Description : #{@detail[:description]}"
+    puts "Status : #{@detail[:status]}"
+    puts
+  end
 end
