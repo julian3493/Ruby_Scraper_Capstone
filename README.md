@@ -46,8 +46,7 @@ Gems:
 
 ### Run tests
 
-- Install RSpec by typing in your terminal `gem install rspec`
-- After the installation is over, just type the command `rspec` in your terminal to check the results of the tests.
+- Just type the command `rspec` in your terminal to check the results of the tests.
 
 ## Author
 
@@ -55,7 +54,7 @@ Gems:
 
 - GitHub: [@julian3493](https://github.com/julian3493)
 - Twitter: [@JulianR16893833](https://twitter.com/JulianR16893833)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/juli%C3%A1n-ricardo-ramos-arevalo-3868ba135/)
+- LinkedIn: [Julián Ricardo Ramos Arevalo](https://www.linkedin.com/in/juli%C3%A1n-ricardo-ramos-arevalo-3868ba135/)
 
 ## 🤝 Contributing
 
