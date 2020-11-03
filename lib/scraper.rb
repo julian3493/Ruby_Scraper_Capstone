@@ -3,7 +3,7 @@ require 'Nokogiri'
 
 class Scraper
   attr_accessor :arr
-  attr_reader :list
+  attr_reader :list, :more_url
 
   def initialize(url)
     @unparsed_page = HTTParty.get(url)
@@ -34,10 +34,14 @@ class Scraper
 
   def more_info(url)
     upd_page = HTTParty.get(url)
-    pd_page = Nokogiri::HTML(@unparsed_page)
+    pd_page = Nokogiri::HTML(upd_page)
     @detail = {
-      title: pd_page.css('h1')
+      title: pd_page.css('h1').text
     }
     puts @detail
+  end
+  
+  def check_title(string)
+    @arr.any? { |hash| @more_url = hash[:url] if hash[:title] == string }
   end
 end

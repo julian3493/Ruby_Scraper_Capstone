@@ -13,7 +13,19 @@ see = gets.chomp
 
 if see == 'y'
   scraper.print_data
-
+  puts 'Do you want to see more information about an anime?'
+  puts "PRESS 'y' to see more information or any other key to exit"
+  more_info = gets.chomp
+  if more_info == 'y'
+    valid_name = FALSE
+    until valid_name
+      puts 'Please Copy and Paste the Anime title'
+      anime_title = gets.chomp
+      valid_name = scraper.check_title(anime_title)
+      puts valid_name
+    end
+    scraper.more_info(scraper.more_url)
+  end
 end
 
 puts 'Thank you for using the Animeflv scraper, Good Bye'
