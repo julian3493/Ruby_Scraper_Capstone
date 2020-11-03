@@ -32,15 +32,6 @@ class Scraper
     end
   end
 
-  def more_info(url)
-    upd_page = HTTParty.get(url)
-    pd_page = Nokogiri::HTML(upd_page)
-    @detail = {
-      title: pd_page.css('h1').text
-    }
-    puts @detail
-  end
-  
   def check_title(string)
     @arr.any? { |hash| @more_url = hash[:url] if hash[:title] == string }
   end
