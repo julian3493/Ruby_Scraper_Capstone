@@ -1,6 +1,7 @@
 require 'HTTParty'
 require 'Nokogiri'
 
+# Class Scraper
 class Scraper
   attr_accessor :arr
   attr_reader :list, :more_url
@@ -22,6 +23,7 @@ class Scraper
       }
       @arr.push(hash)
     end
+    @arr
   end
 
   def print_data

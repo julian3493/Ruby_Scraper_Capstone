@@ -1,8 +1,8 @@
 require 'HTTParty'
 require 'Nokogiri'
 
+# Class MoreInfo
 class MoreInfo
-
   def initialize(url)
     upd_page = HTTParty.get(url)
     pd_page = Nokogiri::HTML(upd_page)
