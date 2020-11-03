@@ -8,5 +8,8 @@ describe Scraper do
     it 'create an array with grouped data' do
       expect(scraper.format_data).to be_a(Array)
     end
+    it 'create an array of hashes' do
+      expect(scraper.format_data.all? { |item| item.is_a?(Hash) }).to eql(TRUE)
+    end
   end
 end
