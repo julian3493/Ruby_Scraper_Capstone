@@ -1,4 +1,5 @@
 require_relative '../lib/scraper.rb'
+require_relative '../lib/more_info.rb'
 
 require 'HTTParty'
 require 'Nokogiri'
@@ -6,7 +7,7 @@ require 'Nokogiri'
 scraper = Scraper.new('https://www3.animeflv.net/browse')
 scraper.format_data
 
-puts 'Welcome to the animeflv scraper \n \n'
+puts 'Welcome to the animeflv scraper'
 puts "Actually there are #{scraper.arr.length} registers, do you want to see the registers?"
 puts "PRESS 'y' to see the registers or any other key to exit"
 see = gets.chomp
@@ -22,9 +23,9 @@ if see == 'y'
       puts 'Please Copy and Paste the Anime title'
       anime_title = gets.chomp
       valid_name = scraper.check_title(anime_title)
-      puts valid_name
     end
-    scraper.more_info(scraper.more_url)
+    more = MoreInfo.new(scraper.more_url)
+    more.print_info
   end
 end
 

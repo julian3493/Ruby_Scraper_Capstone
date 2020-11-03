@@ -9,6 +9,7 @@ class Scraper
     @unparsed_page = HTTParty.get(url)
     @parsed_page = Nokogiri::HTML(@unparsed_page)
     @list = @parsed_page.css('.ListAnimes').css('.Anime')
+    system 'cls'
   end
 
   def format_data
