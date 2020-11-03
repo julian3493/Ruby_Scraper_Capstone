@@ -20,5 +20,8 @@ describe Scraper do
     it 'return TRUE if the Title given is into the data' do
       expect(scraper.check_title('Munou na Nana')).to eql(TRUE)
     end
+    it 'return FALSE if the Title given is not into the data' do
+      expect(scraper.check_title('Title not included')).to eql(FALSE)
+    end
   end
 end
