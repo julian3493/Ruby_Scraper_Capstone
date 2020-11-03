@@ -11,6 +11,7 @@ class Scraper
     @parsed_page = Nokogiri::HTML(@unparsed_page)
     @list = @parsed_page.css('.ListAnimes').css('.Anime')
     format_data
+    system 'cls'
   end
 
   private
