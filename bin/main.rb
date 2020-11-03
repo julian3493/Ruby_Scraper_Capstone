@@ -12,6 +12,13 @@ def print_data(arr)
   end
 end
 
+def print_info(detail)
+  puts "Anime Title : #{detail[:title]}"
+  puts "Description : #{detail[:description]}"
+  puts "Status : #{detail[:status]}"
+  puts
+end
+
 scraper = Scraper.new('https://www3.animeflv.net/browse')
 
 puts 'Welcome to the animeflv scraper'
@@ -32,7 +39,7 @@ if see == 'y'
       valid_name = scraper.check_title(anime_title)
     end
     more = MoreInfo.new(scraper.more_url)
-    more.print_info
+    print_info(more.detail)
   end
 end
 
