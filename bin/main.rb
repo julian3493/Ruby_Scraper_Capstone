@@ -7,7 +7,6 @@ require 'HTTParty'
 require 'Nokogiri'
 
 scraper = Scraper.new('https://www3.animeflv.net/browse')
-#scraper.format_data
 
 puts 'Welcome to the animeflv scraper'
 puts "Actually there are #{scraper.arr.length} registers, do you want to see the registers?"
