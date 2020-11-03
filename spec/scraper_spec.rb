@@ -9,7 +9,6 @@ describe Scraper do
       expect { scraper.format_data }.to raise_error(NoMethodError)
     end
   end
-  
   describe '#check_title' do
     it 'return TRUE if the Title given is into the data' do
       expect(scraper.check_title('Munou na Nana')).to eql(TRUE)
